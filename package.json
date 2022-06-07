@@ -1,0 +1,17 @@
+{
+  "name": "jersey-scraper",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "test": "npx functions-framework --target=scrape --signature-type=http",
+    "deploy": "gcloud functions deploy scrape --env-vars-file .env.yml --runtime nodejs16 --trigger-topic jersey-scraper --allow-unauthenticated --memory=512MB"
+  },
+  "dependencies": {
+    "dotenv-yaml": "^0.1.4",
+    "puppeteer": "^13.4.0",
+    "twilio": "^3.75.0"
+  },
+  "devDependencies": {
+    "@google-cloud/functions-framework": "^3.0.0"
+  }
+}
